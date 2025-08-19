@@ -60,12 +60,12 @@ GROQ_API_KEY=your_api_key_here
 Run the app with Streamlit:
 
 ```bash
-streamlit run app.py
+streamlit run main.py
 ```
 
 1. Upload a **PDF file**.
 2. Choose a **mode** (QNA, MCQs, Flashcards, or Summary).
-3. Select **difficulty** and number of questions (if applicable).
+3. Select **difficulty** and number of questions.
 4. Click **Generate** 🚀.
 5. View and copy results directly.
 
@@ -75,7 +75,7 @@ streamlit run app.py
 
 ```
 quizify-ai/
-│── app.py              # Main Streamlit app
+│── main.py              # Main Streamlit app
 │── requirements.txt    # Python dependencies
 │── .env.example        # Example env file (ignored in git)
 │── README.md           # Project documentation
