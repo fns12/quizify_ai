@@ -26,7 +26,18 @@ Upload your PDF, select a mode, and generate high-quality study content instantl
 
 ---
 
-## 🛠️ Installation
+## 🛠️ Installation & Running
+
+## 🔑 Setting up Groq API Key
+
+For this project, you need a **Groq API key**.
+
+1. Sign up at [Groq](https://console.groq.com/) and get your API key.
+2. Create a `.env` file in the root folder and add:
+
+```bash
+echo "GROQ_API_KEY=your_api_key_here" > .env
+```
 
 ### 1. Clone the repo
 
@@ -45,23 +56,29 @@ venv\Scripts\activate      # Windows
 pip install -r requirements.txt
 ```
 
-### 3. Set up environment variables
-
-Create a `.env` file in the project root:
-
-```env
-GROQ_API_KEY=your_api_key_here
-```
-
----
-
-## ▶️ Usage
-
-Run the app with Streamlit:
+### 3. Run the app with Streamlit:
 
 ```bash
 streamlit run main.py
 ```
+---
+## 🚀 Using the Live Demo
+
+You can try the deployed app here: **[Live Demo](https://quizify-ai12.streamlit.app/)**
+
+When running the demo, you need to provide your **GROQ API Key**:
+
+  1. Go to manage app,click the **three dots (⋮)** → **Settings** → **Secrets**.
+  2. Add your key in the following format:
+
+     ```
+     GROQ_API_KEY="your_api_key_here"
+     ```
+  3. Save and restart the app.
+
+---
+
+## ▶️ Usage
 
 1. Upload a **PDF file**.
 2. Choose a **mode** (QNA, MCQs, Flashcards, or Summary).
