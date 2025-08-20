@@ -1,5 +1,5 @@
 import streamlit as st
-from langchain_community.document_loaders import PyPDFLoader
+from langchain.document_loaders import PyPDFLoade
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_groq import ChatGroq
 import os
@@ -55,7 +55,13 @@ def generate_prompt(llm, mode, num_questions, difficulty, chunk_text):
         - Questions should be {difficulty} level
         - Answers should be complete, concise, and accurate
         - Include only factual information from the text
-        - Do not number them
+        - The format should be:
+         Each flashcard MUST follow this exact format:
+                Q: <question>
+                A: <answer>
+
+                Q: <question>
+                A: <answer>
         - Each question must start with "Q:" and each answer with "A:"
         - Each Q/A pair must be separated by a blank line
         Text:
@@ -115,6 +121,7 @@ def consolidated_result(llm, mode, num_questions, difficulty, chunks):
         prompt += f"- Ensure {difficulty} level\n"
         prompt += f"- Limit to {num_questions} items\n"
         prompt += "- Remove duplicates\n"
+        #- Number sequentially\n
     elif mode == "Summary":
         prompt += "- Merge into a coherent concise summary\n"
     prompt += "Return only the final polished output."
