@@ -55,15 +55,7 @@ def generate_prompt(llm, mode, num_questions, difficulty, chunk_text):
         - Questions should be {difficulty} level
         - Answers should be complete, concise, and accurate
         - Include only factual information from the text
-        - Each question MUST follow this exact format:
-            Q.1: <question>
-            A: <answer>
-
-            Q.2: <question>
-            A: < answer>
-
-                (continue sequentially as Q.3, Q.4, etc.)
-        - Absolutely do NOT use "1.Q" or any other numbering style.
+        - D not number them
         - Each question must start with "Q:" and each answer with "A:"
         - Each Q/A pair must be separated by a blank line
         Text:
